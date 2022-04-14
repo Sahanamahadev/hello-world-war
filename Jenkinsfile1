@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'java4' } 
+    agent { label 'java' } 
     stages {
         stage('checkout') {
             steps {
@@ -11,10 +11,6 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        stage('deploy') {
-            steps {
-                sh 'cp /var/lib/jenkins/workspace/project123/target/hello-world-war-1.0.0 /opt/apache-tomcat-8.5.78/webapps'
-            }
-        }
+        
 }
 }
