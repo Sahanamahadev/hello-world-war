@@ -11,6 +11,11 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+       stage('deploy') {
+            steps {
+                sh 'cp /var/lib/jenkins/workspace/project23/target/hello-world-war-1.0.0 /opt/apache-tomcat-8.5.78/webapps'
+            }
+        } 
         
 }
 }
